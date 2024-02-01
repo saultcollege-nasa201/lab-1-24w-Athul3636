@@ -221,7 +221,7 @@ h1.heading.pink:after {
 /* Testimonial */
 .testimonial-box {
   padding: 2em;
-  color: #fff;
+
   border-radius: 5px;
   font-weight: 300;
   min-height: 400px;
@@ -242,17 +242,35 @@ h1.heading.pink:after {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0;
 }
-.testimonial-box.yellow {
-  background-color: #ffbe61;
+.testimonial-box.yellow {.container-fluid
+   
+  background-image: url('docs/assets/ami.jpg');
+  /* Other background properties */
+  background-size: cover; /* Optional: Adjust the background size */
+  background-position: center; /* Optional: Adjust the background position */
+  background-repeat: no-repeat; /* Optional: Prevent background repetition */
+
+
+ 
 }
 .testimonial-box.purple {
-  background-color: #7b32d5;
+  background-image: url('assets/ami.jpg');
+  /* Other background properties */
+ 
 }
 .testimonial-box.blue {
-  background-color: #37a7ff;
+  background-image: url('docs/assets/ami.jpg');
+  /* Other background properties */
+  background-size: cover; /* Optional: Adjust the background size */
+  background-position: center; /* Optional: Adjust the background position */
+  background-repeat: no-repeat; /* Optional: Prevent background repetition */
 }
 .testimonial-box.pink {
-  background-color: #ff2a75;
+  background-image: url('docs/assets/ami.jpg');
+  /* Other background properties */
+  background-size: cover; /* Optional: Adjust the background size */
+  background-position: center; /* Optional: Adjust the background position */
+  background-repeat: no-repeat; /* Optional: Prevent background repetition */
 }
 
 
