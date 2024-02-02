@@ -4,9 +4,11 @@
 
  body {
   font-family: 'Open Sans', sans-serif;
+  align-self: auto;
   background-color: #f2f2f2;
   font-size: 16px;
   color: #222;
+  
   font-weight: normal;
   letter-spacing: 0.03em;
 }
@@ -50,6 +52,7 @@ header.hero {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  align-self: auto;
   color: #fff;
   padding-bottom: 80px;
 }
