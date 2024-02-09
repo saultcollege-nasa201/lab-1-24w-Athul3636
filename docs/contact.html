@@ -87,49 +87,49 @@
     </div>
 
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
-            // Reset error messages
-            document.getElementById("nameError").textContent = "";
-            document.getElementById("emailError").textContent = "";
-            document.getElementById("messageError").textContent = "";
+    // Get form inputs
+    var nameInput = document.getElementById('name');
+    var emailInput = document.getElementById('email');
+    var messageInput = document.getElementById('message');
+    var isValid = true;
 
-            // Get form data
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
+    // Validation criteria
+    if (nameInput.value.trim() === '') {
+        isValid = false;
+        nameInput.classList.add('error');
+    } else {
+        nameInput.classList.remove('error');
+    }
 
-            // Validate form data
-            var isValid = true;
-            if (!name) {
-                document.getElementById("nameError").textContent = "Please enter your name.";
-                isValid = false;
-            }
-            if (!email || !isValidEmail(email)) {
-                document.getElementById("emailError").textContent = "Please enter a valid email address.";
-                isValid = false;
-            }
-            if (!message) {
-                document.getElementById("messageError").textContent = "Please enter your message.";
-                isValid = false;
-            }
+    if (!isValidEmail(emailInput.value.trim())) {
+        isValid = false;
+        emailInput.classList.add('error');
+    } else {
+        emailInput.classList.remove('error');
+    }
 
-            if (isValid) {
-                // Generate mailto link with form data
-                var subject = "Contact Form Submission";
-                var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
-                var mailtoLink = "mailto:athul3636@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    if (!messageInput.value.includes('please')) {
+        isValid = false;
+        messageInput.classList.add('error');
+    } else {
+        messageInput.classList.remove('error');
+    }
 
-                // Redirect to Gmail
-                window.location.href = mailtoLink;
-            }
-        });
+    // Submit the form if valid
+    if (isValid) {
+        this.submit();
+    }
+});
 
-        function isValidEmail(email) {
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
+function isValidEmail(email) {
+    // Simple email validation regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
     </script>
 </body>
 </html>
