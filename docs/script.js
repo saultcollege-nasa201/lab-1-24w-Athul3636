@@ -1,47 +1,56 @@
 
 document.getElementById('myForm').addEventListener('submit', function(event) {
-// Prevent the default form submission
-event.preventDefault();
+  event.preventDefault();
 
-// Get form inputs
-var nameInput = document.getElementById('name');
-var emailInput = document.getElementById('email');
-var messageInput = document.getElementById('message');
-var isValid = true;
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var messageInput = document.getElementById('message');
+  var isValid = true;
 
-// Validation criteria
-var nameInput = formData.get('name');
-var emailInput = formData.get('email');
-var messageInput = formData.get('message');
-if (nameInput.value.trim() === '') {
-isValid = false;
-nameInput.classList.add('error');
-} else {
-nameInput.classList.remove('error');
-}
+  // Validation for name
+  if (!isValidInput(nameInput.value)) {
+    isValid = false;
+    showError(nameInput);
+  } else {
+    hideError(nameInput);
+  }
 
-if (!isValidEmail(emailInput.value.trim())) {
-isValid = false;
-emailInput.classList.add('error');
-} else {
-emailInput.classList.remove('error');
-}
+  // Validation for email
+  if (!isValidEmail(emailInput.value.trim())) {
+    isValid = false;
+    showError(emailInput);
+  } else {
+    hideError(emailInput);
+  }
 
-if (!messageInput.value.includes('please')) {
-isValid = false;
-messageInput.classList.add('error');
-} else {
-messageInput.classList.remove('error');
-}
+  // Validation for message
+  if (!isValidInput(messageInput.value) || !messageInput.value.includes('please')) {
+    isValid = false;
+    showError(messageInput);
+  } else {
+    hideError(messageInput);
+  }
 
-// Submit the form if valid
-if (isValid) {
-this.submit();
-}
+  // Submit the form if valid
+  if (isValid) {
+    this.submit();
+  }
 });
 
+function isValidInput(input) {
+  // Check for special characters
+  return /^[a-zA-Z0-9\s]*$/.test(input);
+}
 
 function isValidEmail(email) {
-// Simple email validation regex
-return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // Simple email validation regex
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showError(element) {
+  element.classList.add('error');
+}
+
+function hideError(element) {
+  element.classList.remove('error');
 }

@@ -62,29 +62,27 @@
         .error {
             color: red;
             margin-top: 5px;
+            
         }
     </style>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Contact Us</h1>
         
-        <form id="contactForm" action="mailto:athul3636@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            <span id="nameError" class="error"></span><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            <span id="emailError" class="error"></span><br>
-
+        <form action="mailto:athul3636@gmail.com" method="post" enctype="multipart/form-data" id="myForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            <span id="messageError" class="error"></span><br>
-
+            <textarea id="message" name="message"></textarea><br>
+            <label for="attachment">Attachment:</label><br>
+            <input type="file" id="attachment" name="attachment"><br>
             <input type="submit" value="Submit">
-        </form>
+          </form>
+          
     </div>
 
  <div class="back-to-home">
