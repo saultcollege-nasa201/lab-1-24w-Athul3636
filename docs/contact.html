@@ -98,6 +98,9 @@
     var isValid = true;
 
     // Validation criteria
+    var nameInput = formData.get('name');
+    var emailInput = formData.get('email');
+    var messageInput = formData.get('message');
     if (nameInput.value.trim() === '') {
         isValid = false;
         nameInput.classList.add('error');
