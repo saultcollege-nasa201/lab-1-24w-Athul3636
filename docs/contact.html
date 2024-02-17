@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+       body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #219c16;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #132020;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #464141;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #5389c2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold; /* Add this line to make the text bold */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.scroll-arrow {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #ccc;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.scroll-arrow:hover .arrow {
+  border-left-color: #666;
+}
+
+.back-to-home-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-to-home {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0b9222;
+  color: #0b9222;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-to-home:hover {
+  background-color: #0b9222;
+  color: #fff;
+  border-color: #0b9222;
+}
+
+
+    </style>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="mailto:athul3636@gmail.com" method="post" enctype="multipart/form-data" id="myForm">
+          <div class="form-group">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label><br>
+            <div class="message-container">
+              <textarea id="message" name="message" rows="4"></textarea>
+              <div class="scroll-arrow">
+                <div class="arrow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="attachment">Attachment:</label><br>
+            <input type="file" id="attachment" name="attachment"><br>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="back-to-home-box">
+          <a href="index.html" class="back-to-home">Back to Home</a>
+        </div>
+      </div>
+      <script src="script.js"></script>
+
+</body>
+</html>
